@@ -22,6 +22,8 @@ public class RestBroswerStackAPI implements BrowserStackAPI {
 
     private static final String XML = "xml";
 
+    private static final String PNG = "png";
+
     private static final String BROWSER_VERSION = "browser_version";
 
     private static final String BROWSER = "browser";
@@ -108,7 +110,7 @@ public class RestBroswerStackAPI implements BrowserStackAPI {
 
     @Override
     public ByteBuffer getScreenShot(String id) {
-        return ByteBuffer.wrap(client.get(String.format(Methods.SCREENSHOT, id, XML)).getBytes());
+        return ByteBuffer.wrap(client.get(String.format(Methods.SCREENSHOT, id, PNG)).getBytes());
     }
 
     @Override
